@@ -2,6 +2,10 @@ package io.github.wy.example;
 
 import io.github.wy.example.tables.PersonTable;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+
 /**
  * @author rycat
  * @since 2023/11/25
@@ -9,6 +13,14 @@ import io.github.wy.example.tables.PersonTable;
 public class Main {
     public static void main(String[] args) {
         System.out.println("running");
-        System.out.println(PersonTable.class);
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        try (PrintWriter out = new PrintWriter(buffer)) {
+            out.println("hello world!!");
+            out.println("hello world!!");
+            out.println("hello world!!");
+            out.println("hello world!!");
+        }
+        String s = buffer.toString();
+        System.out.println(s);
     }
 }

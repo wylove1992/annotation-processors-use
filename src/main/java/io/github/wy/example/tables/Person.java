@@ -8,8 +8,9 @@ import java.util.function.Function;
  * @author rycat
  * @since 2023/11/25
  */
-@Table
+@Table(name = "hi, this is name property", nameList = true)
 public class Person {
+    Integer boxInt = 41;
     byte byteType = 4;
     double doubleType = 414D;
     byte[] byteArrayType = null;
@@ -32,7 +33,9 @@ public class Person {
     private static Function<String, String> privateStaticFunctionType = s->s + s;
     private static final byte privateStaticFinalByteType = 4;
     private static final double privateStaticFinalDoubleType = 414D;
+    private static final Double privateStaticFinalBoxDoubleType = 414414D;
     private static final byte[] privateStaticFinalByteArrayType = null;
     private static final Object privateStaticFinalObjectType = null;
     private static final Function<String, String> privateStaticFinalFunctionType = s->s + s;
+    final int onlyFinal = 4152;
 }
